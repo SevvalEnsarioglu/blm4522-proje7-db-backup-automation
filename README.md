@@ -1,7 +1,7 @@
 # BLM4522 — Proje 7: Veritabanı Yedekleme ve Otomasyon
 
 > 22290742 - ŞEVVAL ENSARİOĞLU  
-> **Video Linki:** *(eklenecek)*
+> **Video Linki:** *https://youtu.be/ibBzoqQQW60*
 
 ---
 

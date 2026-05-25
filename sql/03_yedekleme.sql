@@ -9,8 +9,7 @@
 -- =========================================================
 
 -- FULL  → Tüm veritabanı (şema + veri)
--- pg_dump -U postgres -d northwind -F p \
---         -f /Users/Shared/backups/northwind_full_backup.sql
+-- pg_dump -U postgres -d northwind -F p \  -f /Users/Shared/backups/northwind_full_backup.sql
 
 -- SCHEMA → Sadece tablo yapıları
 -- pg_dump -U postgres -d northwind --schema-only -F p \ -f /Users/Shared/backups/northwind_schema_backup.sql
