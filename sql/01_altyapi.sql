@@ -1,18 +1,8 @@
--- =========================================================
--- PROJE 7: VERİTABANI YEDEKLEME VE OTOMASYON ÇALIŞMASI
--- DB: PostgreSQL - Northwind
--- Dosya: 01_altyapi.sql
--- Açıklama: Şema, tablolar
--- =========================================================
-
 -- 1. ŞEMA OLUŞTURMA
 CREATE SCHEMA IF NOT EXISTS backup_automation;
 
-
--- =========================================================
 -- 2. BACKUP LOG TABLOSU
 -- Her backup işleminin durumunu kaydeder.
--- =========================================================
 
 CREATE TABLE IF NOT EXISTS backup_automation.backup_log (
     backup_id SERIAL PRIMARY KEY,
@@ -27,11 +17,8 @@ CREATE TABLE IF NOT EXISTS backup_automation.backup_log (
     error_message TEXT
 );
 
-
--- =========================================================
 -- 3. BACKUP AUDIT TABLOSU
 -- Backup işlemlerinin denetim kayıtlarını tutar.
--- =========================================================
 
 CREATE TABLE IF NOT EXISTS backup_automation.backup_audit (
     audit_id SERIAL PRIMARY KEY,
@@ -46,11 +33,8 @@ CREATE TABLE IF NOT EXISTS backup_automation.backup_audit (
         ON DELETE SET NULL
 );
 
-
--- =========================================================
 -- 4. BACKUP ALERT TABLOSU
 -- Başarısız backup işlemlerinde uyarı kaydı oluşturur.
--- =========================================================
 
 CREATE TABLE IF NOT EXISTS backup_automation.backup_alerts (
     alert_id SERIAL PRIMARY KEY,

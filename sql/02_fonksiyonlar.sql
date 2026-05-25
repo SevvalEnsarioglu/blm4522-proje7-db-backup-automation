@@ -1,15 +1,5 @@
--- =========================================================
--- PROJE 7: VERİTABANI YEDEKLEME VE OTOMASYON ÇALIŞMASI
--- DB: PostgreSQL - Northwind
--- Dosya: 02_fonksiyonlar.sql
--- Açıklama: Yardımcı + Alert fonksiyonları
--- =========================================================
-
-
--- =========================================================
 -- 5. BAŞARILI BACKUP LOG FONKSİYONU
 -- Gerçek backup alındıktan sonra başarı kaydı atmak için kullanılır.
--- =========================================================
 
 CREATE OR REPLACE FUNCTION backup_automation.log_successful_backup(
     p_database_name VARCHAR,
@@ -62,11 +52,8 @@ BEGIN
 END;
 $$;
 
-
--- =========================================================
 -- 6. BAŞARISIZ BACKUP LOG FONKSİYONU
 -- Backup başarısız olduğunda log + alert oluşturur.
--- =========================================================
 
 CREATE OR REPLACE FUNCTION backup_automation.log_failed_backup(
     p_database_name VARCHAR,

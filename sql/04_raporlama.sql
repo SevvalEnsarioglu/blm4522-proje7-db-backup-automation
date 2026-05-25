@@ -1,15 +1,5 @@
--- =========================================================
--- PROJE 7: VERİTABANI YEDEKLEME VE OTOMASYON ÇALIŞMASI
--- DB: PostgreSQL - Northwind
--- Dosya: 04_raporlama.sql
--- Açıklama: Özet, detay ve alert raporları (VIEW tanımları)
--- =========================================================
-
-
--- =========================================================
 -- 7. BACKUP RAPOR VIEW
 -- Backup durumlarını raporlamak için kullanılır.
--- =========================================================
 
 CREATE OR REPLACE VIEW backup_automation.v_backup_report AS
 SELECT
@@ -31,11 +21,8 @@ SELECT
 FROM backup_automation.backup_log bl
 ORDER BY bl.backup_start_time DESC;
 
-
--- =========================================================
 -- 8. GÜNLÜK BACKUP ÖZET RAPOR VIEW
 -- Hangi gün kaç başarılı/başarısız backup var gösterir.
--- =========================================================
 
 CREATE OR REPLACE VIEW backup_automation.v_daily_backup_summary AS
 SELECT
@@ -48,11 +35,8 @@ FROM backup_automation.backup_log
 GROUP BY DATE(backup_start_time)
 ORDER BY backup_date DESC;
 
-
--- =========================================================
 -- 9. AÇIK UYARI RAPOR VIEW
 -- Çözülmemiş backup hatalarını gösterir.
--- =========================================================
 
 CREATE OR REPLACE VIEW backup_automation.v_open_backup_alerts AS
 SELECT

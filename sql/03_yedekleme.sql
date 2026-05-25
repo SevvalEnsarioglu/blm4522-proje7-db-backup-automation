@@ -1,22 +1,8 @@
--- =========================================================
--- PROJE 7: VERİTABANI YEDEKLEME VE OTOMASYON ÇALIŞMASI
--- DB: PostgreSQL - Northwind
--- Dosya: 03_yedekleme.sql
--- Açıklama: Ana yedekleme komutları ve terminal referansları
--- =========================================================
-
-
--- =========================================================
 -- GERÇEK BACKUP KOMUTU
 -- Bu komut SQL içinde değil, terminalde çalıştırılır.
--- =========================================================
 
 -- macOS Terminal için örnek:
 -- pg_dump -U postgres -d northwind -F p -f /Users/Shared/backups/northwind_full_backup.sql
-
--- Eğer özel port kullanıyorsan:
--- pg_dump -h localhost -p 5432 -U postgres -d northwind -F p -f /Users/Shared/backups/northwind_full_backup.sql
-
 
 -- =========================================================
 -- BACKUP TÜRÜ AÇIKLAMALARI
@@ -27,18 +13,14 @@
 --         -f /Users/Shared/backups/northwind_full_backup.sql
 
 -- SCHEMA → Sadece tablo yapıları
--- pg_dump -U postgres -d northwind --schema-only -F p \
---         -f /Users/Shared/backups/northwind_schema_backup.sql
+-- pg_dump -U postgres -d northwind --schema-only -F p \ -f /Users/Shared/backups/northwind_schema_backup.sql
 
 -- TABLE → Belirli bir tablo
--- pg_dump -U postgres -d northwind -t orders -F p \
---         -f /Users/Shared/backups/northwind_orders_backup.sql
+-- pg_dump -U postgres -d northwind -t orders -F p \  -f /Users/Shared/backups/northwind_orders_backup.sql
 
 
--- =========================================================
 -- YEDEK ALMA SONRASI LOG KAYDI
 -- Terminalde pg_dump başarıyla bitince bu fonksiyon çağrılır.
--- =========================================================
 
 -- FULL yedek başarılı:
 SELECT backup_automation.log_successful_backup(

@@ -1,16 +1,6 @@
--- =========================================================
--- PROJE 7: VERİTABANI YEDEKLEME VE OTOMASYON ÇALIŞMASI
--- DB: PostgreSQL - Northwind
--- Dosya: 05_pgagent_jobs.sql
--- Açıklama: pg_cron / pgAgent zamanlayıcı job tanımlamaları
--- =========================================================
-
-
--- =========================================================
 -- 13. PG_CRON OTOMASYON ÖRNEĞİ
 -- NOT: pg_cron kurulmadan çalışmaz.
 -- PostgreSQL'de SQL Server Agent alternatifi olarak kullanılır.
--- =========================================================
 
 -- Extension kurulumu:
 -- CREATE EXTENSION IF NOT EXISTS pg_cron;
